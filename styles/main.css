@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header{
+   
+}
+
+ul{
+    display: flex;
+}
+
+li{
+    list-style: none;
+    margin-left: 8px;
+}
+
+#gameBoard{
+    margin: 0 auto;
+    width: 1200px;
+    height: 550px;
+}
+
+.play{
+    position: absolute;
+    left: 50px;
+    z-index: 2;
+
+    background-color: aquamarine;
+}
