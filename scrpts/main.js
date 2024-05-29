@@ -1,133 +1,79 @@
 const canva = document.getElementById('gameBoard')
 const contexto = canva.getContext('2d')
 
-const imgBackground = new Image()
-imgBackground.src = '../imagens/41530.jpg'
 
-imgBackground.onload=function(){
-    for(let x = 0; x< canva.width; x+=imgBackground.width){
-        for(let y = 0; y< canva.width; y+=imgBackground.width){
-            contexto.drawImage(imgBackground,0,0,canva.width,canva.height)
+class Player{
+    constructor(x,y){
+        this.x = x;
+        this.y = y;
+        this.width = 20;
+        this.height = 20;
+        this.speed = 5;
+        this.gravidade = 0;
+        this.jumPower = -10;
+        this.isJumping = false
+    }
 
+    draw(){
+        contexto.fillStyle = 'blue';
+        contexto.fillRect(this.x,this.y, this.width, this.height)
+    }
+
+    update(){
+        this.y += this.gravidade
+        if(this.isJumping){
+            this.gravidade += 0.5
         }
     }
-    drawPlayer()
-}
 
-class player {
-    constructor(X,Y){
-    this.width = 20,
-    this.height = 20,
-    this.x = canva.width / 80,
-    this.y = canva.height -30,
-    this.speed = 4,
-    this.dx = 0,
-    this.dy = 0,
-    this.gravity = 0.7,
-    this.jumPower = -8,
-    this.isJumping = false,
-    this.isGrouded = true,
+    jump(){
+        if(!this.isJumping){
+            this.gravidade = this.jumPower
+            this.isJumping = true
+        }
     }
 }
 
-const groud = {
-    height: 10,
-    y: canva.height - 10,
-    color: 'blue'
-}
+const player = new Player(50,50)
 
-class lifeBox {
-    contrutor(x,y){
-        this.x = x,
-        this.y = y,
-        this.width = 20,
-        this.height = 20,
-        this.image = new Image()
-        this.image = ''
+class Box{
+    constructor(x,y){
+        this.x = x;
+        this.y = y;
+        this.height = 20;
+        this.width = 20;
+
     }
 }
 
-const cam ={
-    x:0,
-    y:0,
-    width: 500,
-    height:500,
 
-}
-
-document.addEventListener('keydown', function(e){
-    if(e.keyCode === 37){
-        player.dx =- player.speed
-    }else if(e.keyCode===39){
-        player.dx =+ player.speed
-    }else if(e.keyCode === 32 && player.isGrouded){
-        player.dy = player.jumPower
-        player.isGrouded = false
-        player.isJumping = true
+document.addEventListener('keydown',function(e){
+    if(e.keyCode === 39){
+        player.x += player.speed
+    }else if(e.keyCode === 37){
+        player.x -= player.speed
+    }else if(e.keyCode === 32){
+        player.jump()
     }
+
 })
 
-document.addEventListener('keyup', function(e){
-    if(e.keyCode === 37 || e.keyCode === 39){
-        player.dx = 0
-    }
-})
+// document.addEventListener('keyup', function(e){
+//     if(e.keyCode === 39 &&  e.keyCode === 37 && e.shiftKey === 32){
 
-function drawBackgroud(){
+//     }
+// })
 
-}
-
-function drawCam(){
-    contexto.fillStyle = 'yellow'
-    contexto.fillRect(cam.x,cam.y,cam.width,cam.height)
-}
-
-
-function drawPlayer(){
-    contexto.fillStyle = 'red'
-    contexto.fillRect(player.x, player.y, player.width, player.height)
-}
-
-function drawGroud(){
-    contexto.fillStyle = groud.color,
-    contexto.fillRect(0, groud.y, canva.width, groud.height)
-}
-
-function update(){
-    player.x += player.dx
-    player.y += player.dy
-    if(!player.isGrouded){
-        player.dy += player.gravity
-    }
-
-    if(player.x<0){
-        player.x=0
-    }else if(player.x + player.width> canva.width){
-        player.x = canva.width - player.width
-    }
-
-    if(player.y + player.height >= groud.y){
-        player.y = groud.y - player.height
-        player.dy = 0
-
-        player.isGrouded =true
-        player.isJumping = false
-    }
-}
-
-function clear(){
+function gameLoop(){
     contexto.clearRect(0,0,canva.width,canva.height)
+    player.draw()
+    player.update()
+
+    requestAnimationFrame(gameLoop)
 }
 
-function draw(){
-    
-    clear()
-    drawGroud()
-    contexto.drawImage(imgBackground,0,0,canva.width,canva.height)
-    drawPlayer()
-    update()
-
-    requestAnimationFrame(draw)
-}
-
-''
+document.getElementById('playButton').addEventListener('click', function(){
+    gameLoop()
+    console.log('Play')
+    document.getElementsByTagName('canvas')[0].style.display = 'block'
+})
