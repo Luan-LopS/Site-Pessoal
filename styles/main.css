@@ -1,9 +1,10 @@
 :root{
     --corFundo:#000d00;
-    --corDestaque: #2f7d23;
+    --corDestaque: #a6b88f;
     --cor1:#24611a;
     --cor2:#184512;
     --cor3:#0c2909;
+    --cor4:#efffdd;
     --fontePixel: "Jacquard 12",system-ui;
 }
 
@@ -20,64 +21,129 @@
 }
 
 body{
-    background-color:;
     color: var(--corFundo);
+}
+
+h3{
+    padding-bottom: 2rem;
+    font-weight: bold;
 }
 
 header{
    padding: 11px;
-   border-bottom: 0.2px solid var(--cor2);
+   background-color: var(--corDestaque);
 }
 
 header .container{
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 ul{
     display: flex;
+    list-style: none;
 }
 
 li{
-    list-style: none;
-    margin-left: 12px;
+    margin-left: 10px;
 }
 
 a{
-    text-decoration: none;
     color: var(--corFundo);
-    font-size: larger;
+    text-decoration: none;
+}
+
+header ul li a{
+    font-size: 1.3rem;
 }
 
 section{
-    margin-top: 2em;
+    padding: 3rem;
 }
 
-.boasVindas{
+.bemVindo .container{
     display: flex;
-    margin-bottom: 2em;
+    font-size: 2rem;
+    justify-content: space-around;
 }
 
-.boasVindas img{
-    width: 200ox;
+.bemVindo .container div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    width: 45%;
 }
 
-.boasVindas div {
-    margin-left: 15px;
+button{
+    margin-top: 1rem;
+    padding: 8px;
+    background-color: var(--cor2);
+    color: var(--cor4);
+    width: 25%;
+    border-radius: 5px;
 }
-
 
 .sobre{
-    background-color: var(--cor1);
+    background-color: var(--cor4);
+    display: flex;
+    font-size: 1.2rem;
 }
 
+.sobre .container{
+    display: flex;
+    padding: 0 8rem 0 8rem;
+    align-items: center;
+}
+
+.img-sobre{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 3.5rem;
+}
+
+.sobre .container div{
+    max-width: 500px;
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.projetos{
+    text-align: center;
+    background-color: var(--corDestaque);
+}
+
+.cards{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.portJogo .container{
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+}
+
+
 #gameBoard{
-    display: none;
     margin: 0 auto;
     width: 1200px;
     height: 550px;
 }
 
 .play{
+    position: absolute;
+    top: 50%;
+    left: 45%;
+}
+footer{
+    background-color: var(--corDestaque);
+    
 }
