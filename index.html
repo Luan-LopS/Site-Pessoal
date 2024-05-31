@@ -11,7 +11,7 @@
 
 
 
-    <link rel="stylesheet" href="/styles/main.css">
+<!----->    <link rel="stylesheet" href="/styles/main.css">
     <title>Dev Lopes</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#">Projetos</a></li>
                     <li><a href="#">PortJogo</a></li>
                     <li><a href="#">Contatos</a></li>
@@ -32,20 +32,21 @@
 
     <section class="bemVindo">
         <div class="container">
+            <img src="./imagens/Innovation.gif" alt="">
+
             <div>
-               <h3> Seja Bem Vindo!!</h3>
+               <h2> Seja Bem Vindo!!</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos minima cupiditate nostrum officiis ex rerum nam illo incidunt commodi alias!</p> 
             <button>Linkdin</button>        
             </div>
-            <img src="./imagens/Innovation.gif" alt="">
         </div>
     </section>
     
-    <section class="sobre">
+    <section id="sobre">
         <div class="container">
             <img src="https://via.placeholder.com/200" class="img-sobre" alt="">
             <div>
-                <h3>Minha Historia</h3>
+                <h2>Minha Historia</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente suscipit accusamus doloribus ut error laborum mollitia est. Sit ea qui ut placeat consequatur sapiente id ad similique at, voluptatum saepe! Maxime inventore nam dignissimos perspiciatis libero nemo molestiae corrupti commodi!</p>
                 <div class="buttons">
                     <button>Linkdin</button>        
@@ -59,9 +60,9 @@
         </div>
     </section>
     
-    <section class="projetos">
+    <section id="projetos">
         <div class="container">
-            <h3>Projetos</h3>
+            <h2>Projetos</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil iure tempore libero minus repellat voluptatum, quia id soluta nisi nostrum.</p>
             <div class="cards">
                 <div class="card-projeto">
@@ -82,7 +83,7 @@
     
     <section class="portJogo">
         <div class="container">
-            <h3>PortJogo</h3>
+            <h2>PortJogo</h2>
 
             <canvas id="gameBoard">
                 
@@ -95,13 +96,26 @@
     </section>
     
 
-    <footer>
+    <section id="contato">
         <div class="container">
-            <h3>Contato</h3>
+            <h2>Contato</h2>
+            <div class="whats">
+                <form action="">
+                    <label for="nome">Nome: </label>
+                    <input id="nome" type="text"><br>
+                    <label for="msg">Deixe sua mensagem:</label>
+                    <textarea name="msg" id=""></textarea>             
+              </form>
+            </div>
+
 
         </div>
+    </section>
 
-
+    <footer>
+       <p>
+        &copy Desnevolvido Por Luan Lopes de Siqueira
+       </p> 
     </footer>
     <script src="./scrpts/main.js"></script>
 </body>
