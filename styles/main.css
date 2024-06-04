@@ -58,25 +58,41 @@ a{
 
 header ul li a{
     font-size: 1.3rem;
+    padding: 0 2px 0 2px;
+}
+
+header ul li a:hover{
+    border-bottom: solid 6px var(--cor1);
+    background-color: var(--corDestaque);
+    color: var(--corFundo);
+    padding: 16px 2px 16px 2px;
 }
 
 section{
     padding: 3rem;
 }
 
-.bemVindo .container{
+#bemvindo{
+    padding-top: 5rem;
+}
+
+#bemVindo .container{
     display: flex;
-    font-size: 2rem;
+    font-size: 1.5rem;
     justify-content: space-around;
     flex-direction: row-reverse;
 }
 
-.bemVindo .container div h2{
-    font-size: 2.3rem;
-    width: 51%;
+#bemVindo .container div p{
+    margin-bottom: 1rem;
 }
 
-.bemVindo .container div{
+#bemVindo .container div h2{
+    font-size: 2.3rem;
+    width: 70%;
+}
+
+#bemVindo .container div{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,6 +107,12 @@ button{
     color: var(--cor4);
     width: 25%;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--corDestaque);
+    color: var(--corFundo);
 }
 
 #sobre{
@@ -114,6 +136,7 @@ button{
 
 #sobre .container div{
     max-width: 70%;
+    ;text-align: justify;
 }
 
 .buttons{
@@ -127,6 +150,14 @@ button{
     background-color: var(--corDestaque);
 }
 
+.card-projeto img{
+    width: 200px;
+    height: 300px;
+}
+
+#projetos p{
+    font-size: 1.2rem;
+}
 
 .cards{
     margin-top: 2rem;
@@ -134,7 +165,7 @@ button{
     justify-content: space-around;
 }
 
-.portJogo .container{
+#portJogo .container{
     box-sizing: border-box;
     position: relative;
     text-align: center;
@@ -143,14 +174,17 @@ button{
 
 #gameBoard{
     margin: 0 auto;
-    width: 1200px;
-    height: 550px;
 }
 
 .play{
     position: absolute;
+    width: 300px;
+    height: 100px;
+    background-color: aqua;
     top: 50%;
-    left: 45%;
+    left: calc(55% - 200px);
+    border-radius: 8px;
+    border: solid 0.8px black;
 }
 
 #contato{
@@ -159,25 +193,34 @@ button{
     text-align: center;
 }
 
-#contato .whats form{
-    width: 250px;
-    text-align: start;
+#contato .container div{
+    display: flex;
+    justify-content: space-between;
 }
 
-input, textarea{
-    border: 2px solid var(--cor3);
+.links{
+    margin-top: 3rem;
 }
 
-label, input, textarea{
+.link i{
+    font-size: 3rem;
+    color: var(--cor3);
+}
+
+.links p{
     color: var(--cor3);
     font-weight: bold;
-    width: 100%;
-    border-radius: 5px;
+    font-size: 1.2rem;
 }
+
+.links small{
+    color: var(--cor2);
+}
+
 
 footer{
     background-color: var(--cor3);
-    padding: 2rem;
+    padding: 1.4rem;
 }
 
 footer p{
