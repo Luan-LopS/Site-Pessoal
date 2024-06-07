@@ -10,7 +10,7 @@ class Sprite{
     }
     draw(){
         if (this.loaded){
-            return contexto.drawImage(this.image, this.position.x, this.position.y)
+            return contexto.drawImage(this.image, this.position.x, this.position.y, 2208, 544)
         }
     }
 } 
