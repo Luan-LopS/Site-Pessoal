@@ -8,7 +8,6 @@
     --fontePixel: "Jacquard 12",system-ui;
 }
 
-
 *{
     padding: 0;
     margin: 0;
@@ -28,6 +27,76 @@ h2{
     margin-bottom: 2rem;
     font-weight: bold;
     font-size: 2rem;
+}
+
+main{
+    height: 50vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main h1{
+    position: relative;
+    display: block;
+    font-size: 8rem;
+    font-family: roboto, sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+main h1 span{
+    display: inline;
+}
+
+main p{
+    margin-top: 4.5%;
+    float: right;
+    width: 35vw;
+ 
+}
+
+main h1 span::before{
+    content: '';
+    color: var(--cor1);
+    animation: tituloH1 4s ease infinite;
+}
+
+main h1 span::after{
+    content: '.';
+    border-left: var(--cor1) ;
+    animation: ponto 1s infinite;
+    width: calc(100% + 30pxpx);
+    opacity: 0;
+}
+
+@keyframes ponto {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes tituloH1 {
+    0%, 8% {
+        content: 'senvo';
+      }
+      26%, 45% {
+        content: 'senvolvedor';
+      }
+      47%, 60% {
+        content: 'senvolvedor Web';
+      }
+      61%, 80% {
+        content: 'senvolvedor Web Full';
+      }
+      81%, 100% {
+        content: 'senvolvedor Web FullStack';
+    }
 }
 
 header{
@@ -70,34 +139,6 @@ header ul li a:hover{
 
 section{
     padding: 3rem;
-}
-
-#bemvindo{
-    padding-top: 5rem;
-}
-
-#bemVindo .container{
-    display: flex;
-    font-size: 1.5rem;
-    justify-content: space-around;
-    flex-direction: row-reverse;
-}
-
-#bemVindo .container div p{
-    margin-bottom: 1rem;
-}
-
-#bemVindo .container div h2{
-    font-size: 2.3rem;
-    width: 70%;
-}
-
-#bemVindo .container div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: justify;
-    width: 45%;
 }
 
 button{
